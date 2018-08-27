@@ -160,7 +160,7 @@ participant SampleParticipant identified by participantId {
 
 ### 2.4.3 Transaction
 
-ここで定義しているのはTXの処理の内容…ではなく、TXの引数の型である。処理内容についてはScript Fileに書かれており、2.5で説明する
+ここで定義しているのはTXの処理の内容…ではなく、TXの引数の型である。処理内容についてはScript Fileに書かれており、2.5で説明する
 
 ```
 transaction SampleTransaction {
@@ -178,7 +178,7 @@ FabricにおけるTXの実行 (とブロックチェーンへの書き込み) �
 ## 2.5 アプリケーションの中身を理解してみる (Script File)
 
 次に、TXの処理内容 (ビジネスロジック) を理解するため、`Script File` をクリックする。
-これはNode.jsのコードと同一の形式である。
+これはNode.jsのコードと同一の形式である。
 非同期関数 `sampleTransaction` が定義されていることがわかる。
 
 ```
@@ -214,11 +214,11 @@ async function sampleTransaction(tx) {  // eslint-disable-line no-unused-vars
 `async`/`await`はES2017で導入された非同期プログラミングの記法で、ES2015のPromiseの進化系である。Promiseではコールバックを使用していた非同期プログラミングを同期的な見た目で書けるようになっている。すごく大雑把に理解するとこのようになる:
 
 - `async`がついている関数 (例えばステートDBを読み書きする関数) は非同期関数である
-- 非同期関数を呼び出すときに `await` をつけると同期関数のように呼び出せる、つまり、呼び出した関数の処理が完了するのを待ち、その結果を変数に代入し、次の処理に進む、のように書くことができる。
+- 非同期関数を呼び出すときに `await` をつけると同期関数のように呼び出せる、つまり、呼び出した関数の処理が完了するのを待ち、その結果を変数に代入し、次の処理に進む、のように書くことができる。
 
 ### 2.5.2 sampleTransaction()
 
-**コメントの部分の記法も定められているため注意すること。** まずコメント部は以下の通り:
+**コメントの部分の記法も定められているため注意すること。** まずコメント部は以下の通り:
 
 - `@transaction` でこの関数がTXの処理関数であることを示している
 - `@param {org.example.basic.SampleTransaction} tx` でこのTXが引数 `tx` を取ることと、その型が `org.example.basic.SampleTransaction` であることを表す
@@ -245,7 +245,9 @@ const assetRegistry = await getAssetRegistry('org.example.basic.SampleAsset');
 await assetRegistry.update(tx.asset);
 ```
 
-まず`SampleAsset`の読み書きを行うasset registryをロードする。`getAssetRegistry()` は定義済みの非同期関数である。したがって `await` をつけて呼び出す。
-次に、更新済みのAssetを実際に書き込む `assetRegistry.update()` を呼び出す。これも非同期関数なので `await` を付加しておく。
+まず`SampleAsset`の読み書きを行うasset registryをロードする。`getAssetRegistry()` は定義済みの非同期関数である。したがって `await` をつけて呼び出す。
+次に、更新済みのAssetを実際に書き込む `assetRegistry.update()` を呼び出す。これも非同期関数なので `await` を付加しておく。
+
+このように、基本的にはAssetの読み書きを行うことでビジネスロジックの実装を行う。
 
 以下はEventに関するコードなどで今回は説明を省略するが、サンプルコードを見れば容易に使い方を理解できると思う。
