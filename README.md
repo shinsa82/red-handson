@@ -61,11 +61,13 @@ git clone https://github.com/shinsa82/red-handson.git
 必要なもの: モダンブラウザ
 
 1. https://composer-playground.mybluemix.net をブラウザで開く (HTTPS版のページを開くことを推奨)
-2. "Let's Blockchain!" を押す
+2. "Let's Blockchain!" を押す ![](docs/images/01.png)
     1. もし `Error: Object with ID 'undefined' in collection with ID 'chaincodes' does not exist` というエラーなどが表示される場合は https://composer-playground.mybluemix.net/login をリロードしてみる
 1. 1つか複数の白い四角が表示される。それぞれがアプリケーション (Composerでいう "Business Network") である。
-1. いちばん左のアプリケーション (Hello! Composerと書いてある) の `Get Started` もしくは `Connect now` を押す
+1. いちばん左のアプリケーション (Hello! Composerなどと書いてある) の `Get Started` もしくは `Connect now` を押す。 ![](docs/images/05.png)
 1. "Basic Sample Business Network" のダッシュボードが表示される
+
+なお、新しくBusiness Networkを追加したい場合は[こちら](docs/new-app.md)
 
 ## 2.2 ダッシュボードとBusiness Networkの構成要素
 
@@ -73,7 +75,9 @@ git clone https://github.com/shinsa82/red-handson.git
 
 ### 2.2.1 ダッシュボード
 
-上部にはタブが2つ
+![](docs/images/06.png)
+
+上部にはタブが2つある。
 
 - Define: Business Networkの構成要素であるParticipant、Asset、Transaction、EventおよびAccess Control Listを定義する (2.3)
 - Test: Defineタブで定義したBusiness Networkを対話的にテストする (2.4)
@@ -89,7 +93,11 @@ Defineタブで定義する。基本的にはNode.jsのプロジェクト構成�
 
 ソースを編集したら左下の "Deploy Changes" をクリックするとアプリケーションが更新され、前述のTestタブで試すことができる。
 
+![](docs/images/09.png)
+
 また、作成したBusiness Networkは "Export" ボタンからBNAファイルとしてセーブすることができ、Fabricのネットワークにデプロイ可能である。
+
+![](docs/images/10.png)
 
 > 注意: Playgroundで作成したアプリケーションはセッションが切れたりすると消えてしまうので、保存したい場合はこまめにセーブしておくこと。
 
@@ -108,7 +116,7 @@ Defineタブで定義する。基本的にはNode.jsのプロジェクト構成�
 1. 新しい `SampleAsset` の値を決める。ここでもIDは決め打ちで `"0001"` とするのが楽。エンティティの種類が違うのでID被りは問題にならない。`owner` 値は `"resource:<クラス名>#<ID値>"` の形式を取る。さきほど作成したParticipantを参照したいので、`"resource:org.example.basic.SampleParticipant#0001"` を指定する。`value` はなんでもよいがここでは `"100"` としておく。できたら `Create New` をクリック。
 1. レジストリにインスタンスが追加されたことがわかるはず。このとき、`value` 値が `"100"` であることを確認しておく。
 1. ちなみにここまで行ったのちに `All Transactions` をクリックすると、さきほどエンティティを追加したときのTXが先頭に新たに表示されているはず。
-1. いよいよTXの実行。どのページにいてもいいので、左下の `Submit Transaction` をクリック。
+1. いよいよTXの実行。どのページにいてもいいので、左下の `Submit Transaction` をクリック。 ![](docs/images/11.png)
 1. 一般には `Transaction Type` を選択する必要があるが、今は1種類のTXしか存在しないので選ばなくてよい。
 1. TXの引数を決める。`asset` は先ほど追加したAssetを参照したいので `"resource:org.example.basic.SampleAsset#0001"` とする。`newValue` は何でもよいのでここでは `"1"` としておく。入力したら `Submit` をクリック。
 1. 正常に完了すれば画面右上にnotificationが出るはず。
@@ -134,6 +142,8 @@ namespace org.example.basic
 すべてのモデルファイルはそれぞれの名前空間を持つ必要がある。
 
 ### 2.4.1 Participant
+
+![](docs/images/07.png)
 
 Participantはユーザを表す。これはHyperledger Fabricのユーザと対応しており、この情報をもとに、アクセスが制御される。
 
@@ -224,6 +234,8 @@ async function sampleTransaction(tx) {  // eslint-disable-line no-unused-vars
 
 ### 2.5.2 sampleTransaction()
 
+![](docs/images/08.png)
+
 **コメントの部分の記法も定められているため注意すること。** まずコメント部は以下の通り:
 
 - `@transaction` でこの関数がTXの処理関数であることを示している
@@ -280,3 +292,5 @@ await assetRegistry.update(tx.asset);
 
 より詳細なテストのためには、ComposerのツールキットをPCにダウンロードして行う。
 Composerのツールキットのインストールは以下のページを参考に行う。 https://hyperledger.github.io/composer/latest/installing/development-tools.html
+
+インストールが完了したらテストスクリプトの作成および実行を行う。テストは時間の都合上省略するので、詳しくは https://hyperledger.github.io/composer/latest/business-network/testing を参考にしてほしい。
