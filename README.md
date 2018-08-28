@@ -104,6 +104,7 @@ Defineタブで定義する。基本的にはNode.jsのプロジェクト構成�
 1. レジストリにインスタンスが追加されたことがわかるはず。このとき、`value` 値が `"100"` であることを確認しておく。
 1. ちなみにここまで行ったのちに `All Transactions` をクリックすると、さきほどエンティティを追加したときのTXが先頭に新たに表示されているはず。
 1. いよいよTXの実行。どのページにいてもいいので、左下の `Submit Transaction` をクリック。
+1. 一般には `Transaction Type` を選択する必要があるが、今は1種類のTXしか存在しないので選ばなくてよい。
 1. TXの引数を決める。`asset` は先ほど追加したAssetを参照したいので `"resource:org.example.basic.SampleAsset#0001"` とする。`newValue` は何でもよいのでここでは `"1"` としておく。入力したら `Submit` をクリック。
 1. 正常に完了すれば画面右上にnotificationが出るはず。
 1. TX履歴に新たに `SampleTransaction` が追加されているはず。
@@ -169,6 +170,7 @@ transaction SampleTransaction {
 ```
 
 - ここもあまり説明を要しない。この型を定義することによりメソッド SampleTransaction の引数を定義していることになる。これはあるAssetの `value` 値を更新するメソッドなので上記の2つのフィールドを持つ。
+- これはステートDBに格納されるデータではないので、主キー宣言は不要であることに注意。
 
 ### 2.4.4 Event 【省略】
 
@@ -263,6 +265,10 @@ await assetRegistry.update(tx.asset);
 1. SampleParticipantに年齢を表す `Integer` 型のフィールド `age` を追加せよ ([回答例](answers/2.6.1.1.md))
 1. SampleAssetのownerを変更する `transfer` メソッド (引数の型を `org.example.basic.Transfer` とする) を定義せよ
 1. `transfer` メソッドで、受け取る `owner` が18歳未満ならばTXの実行を失敗させよ【ヒント】TXの実行を失敗させるには関数の中で `throw new Error(文字列)` とすればよい。
+
+書き換えたら `Deploy Changes` で変更を反映させ、対話的テストで確認すること。
+
+> 注意: 変更をデプロイするとTestタブ内で見える各種レジストリは空になったように見えるが、実際には古いエンティティが残っているので、エンティティを作る際にIDの重複を避けるよう留意するとよい。
 
 ## 2.7 (要ローカル環境) スクリプトによる単体テストの実行
 
