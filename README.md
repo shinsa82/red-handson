@@ -69,6 +69,8 @@ git clone https://github.com/shinsa82/red-handson.git
 
 ## 2.2 ダッシュボードとBusiness Networkの構成要素
 
+前の画面に戻るには、右上の `admin` をクリックして、出てきた `My Business Networks` をクリックする。
+
 ### 2.2.1 ダッシュボード
 
 上部にはタブが2つ
