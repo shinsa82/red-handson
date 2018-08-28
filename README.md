@@ -268,7 +268,7 @@ await assetRegistry.update(tx.asset);
 
 コードの編集は上部の `Define` タブを選択して、左側のナビゲーションでファイルを選択してから行う。編集が完了したら左下の `Deploy Changes` をクリックして変更を反映する。その後 `Test` タブをクリックして対話的テストを行い、意図通りの動作をすることを確認する。
 
-1. SampleParticipantに年齢を表す `Integer` 型のフィールド `age` を追加せよ。 ([回答例](docs/answers/2.6.1.1.md))
+1. `SampleParticipant` に年齢を表す `Integer` 型のフィールド `age` を追加せよ。 ([回答例](docs/answers/2.6.1.1.md))
 1. `sampleTransaction` メソッドにおいて、引数の `value` 値 (文字列) の先頭に `"$"` を付加したものを新しい `value` 値とするようにメソッドを書き換えよ。つまり引数が `"100"` であれば、Assetの新しい `value` 値が `"$100"` となるようにする。 ([回答例](docs/answers/2.6.1.2.md))
 1. SampleAssetのownerを変更する `transfer` メソッド (引数の型を `org.example.basic.Transfer` とする) を定義せよ。 ([回答例](docs/answers/2.6.1.3.md))
 1. `transfer` メソッドで、受け取る `owner` が18歳未満ならばTXの実行を失敗させよ。【ヒント】TXの実行を失敗させるには関数の中で `throw new Error(文字列)` とすればよい。 ([回答例](docs/answers/2.6.1.4.md))
