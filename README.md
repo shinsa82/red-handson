@@ -55,7 +55,6 @@ git clone https://github.com/shinsa82/red-handson.git
 - 【省略】アプリケーションの中身を理解してみる (Access Control)
 - 2.6 コードを書き換えてみる
 - 2.7 (要ローカル環境) スクリプトによる単体テストの実行
-- (IBM Cloud使用) BNAのネットワークへのデプロイ
 
 ## 2.1 Playgroundでサンプルをもとに新規Business Netoworkを作成してみる
 
@@ -273,13 +272,9 @@ await assetRegistry.update(tx.asset);
 1. SampleAssetのownerを変更する `transfer` メソッド (引数の型を `org.example.basic.Transfer` とする) を定義せよ。 ([回答例](docs/answers/2.6.1.3.md))
 1. `transfer` メソッドで、受け取る `owner` が18歳未満ならばTXの実行を失敗させよ。【ヒント】TXの実行を失敗させるには関数の中で `throw new Error(文字列)` とすればよい。 ([回答例](docs/answers/2.6.1.4.md))
 
-> 注意: 変更をデプロイするとTestタブ内で見える各種レジストリは空になったように見えるが、実際には古いエンティティが残っているので、エンティティを作る際にIDの重複を避けるよう留意するとよい。
+> 注意: エンティティ作成時にエラーになる場合: 変更をデプロイするとTestタブ内で見える各種レジストリは空になったように見えるが、実際には古いエンティティが残っている場合があるので、エンティティを作る際にIDの重複を避けるようにするとよい。
 
 ## 2.7 (要ローカル環境) スクリプトによる単体テストの実行
 
 より詳細なテストのためには、ComposerのツールキットをPCにダウンロードして行う。
 Composerのツールキットのインストールは以下のページを参考に行う。 https://hyperledger.github.io/composer/latest/installing/development-tools.html
-
-## 2.8 
-
-to be written
