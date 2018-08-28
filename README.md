@@ -77,10 +77,10 @@ git clone https://github.com/shinsa82/red-handson.git
 
 ![](docs/images/06.png)
 
-上部にはタブが2つある。
+上部にはタブが2つある。
 
-- Define: Business Networkの構成要素であるParticipant、Asset、Transaction、EventおよびAccess Control Listを定義する (2.3)
-- Test: Defineタブで定義したBusiness Networkを対話的にテストする (2.4)
+- Define: Business Networkの構成要素であるParticipant、Asset、Transaction、EventおよびAccess Control Listを定義する (2.4, 2.5)
+- Test: Defineタブで定義したBusiness Networkを対話的にテストする (2.3)
 
 ### 2.2.2 Business Network
 
@@ -293,4 +293,5 @@ await assetRegistry.update(tx.asset);
 より詳細なテストのためには、ComposerのツールキットをPCにダウンロードして行う。
 Composerのツールキットのインストールは以下のページを参考に行う。 https://hyperledger.github.io/composer/latest/installing/development-tools.html
 
-インストールが完了したらテストスクリプトの作成および実行を行う。テストは時間の都合上省略するので、詳しくは https://hyperledger.github.io/composer/latest/business-network/testing を参考にしてほしい。
+インストールが完了したらテストスクリプトの作成および実行を行う。テストはアプリケーション (BNA) を **実際にデプロイすることなく行うことができる。**
+時間の都合上省略するので、詳しくは https://hyperledger.github.io/composer/latest/business-network/testing を参考にしてほしい。
