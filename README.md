@@ -4,7 +4,7 @@
 
 2018年8月28・29日開催のイベント、[**Research Experience Day**](https://ibm-research-experience.connpass.com/) のDay2 午後のセッション [体験しよう！ブロックチェーン -その仕組みから実践まで-](https://ibm-research-experience.connpass.com/event/95083) のハンズオン資料である。
 
-ドキュメントをブラウザで見る場合は https://github.com/shinsa82/red-handson または ... を参照のこと。サンプルコードを含むソースをすべてダウンロードしたい場合は https://github.com/shinsa82/red-handson.git を `git clone` すること。
+ドキュメントをブラウザで見る場合は https://github.com/shinsa82/red-handson または ... を参照のこと。サンプルコードを含むソースをすべてダウンロードしたい場合は https://github.com/shinsa82/red-handson.git を `git clone` すること。
 
 ```bash
 git clone https://github.com/shinsa82/red-handson.git
