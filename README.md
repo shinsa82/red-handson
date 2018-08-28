@@ -20,10 +20,7 @@ git clone https://github.com/shinsa82/red-handson.git
 
 ## 講師
 
-いずれも所属は、日本アイ・ビー・エム株式会社 東京基礎研究所:
-- 齋藤 新 
-- 岩間 太
-- 榎 美紀
+日本アイ・ビー・エム株式会社 東京基礎研究所 齋藤 新・岩間 太・榎 美紀
 
 # 1. 講習内容
 
@@ -279,7 +276,7 @@ await assetRegistry.update(tx.asset);
 
 ## 2.7 (要ローカル環境) スクリプトによる単体テストの実行
 
-より詳細なテストのためには、ComposerのツールキットをPCにダウンロードして行う。
+より詳細なテストのためには、ComposerのツールキットをPCにダウンロードして行う。
 Composerのツールキットのインストールは以下のページを参考に行う。 https://hyperledger.github.io/composer/latest/installing/development-tools.html
 
 ## 2.8 
