@@ -64,7 +64,7 @@ git clone https://github.com/shinsa82/red-handson.git
 2. "Let's Blockchain!" を押す
     1. もし `Error: Object with ID 'undefined' in collection with ID 'chaincodes' does not exist` というエラーなどが表示される場合は https://composer-playground.mybluemix.net/login をリロードしてみる
 1. 1つか複数の白い四角が表示される。それぞれがアプリケーション (Composerでいう "Business Network") である。
-1. いちばん左のアプリケーション (Hello! Composerと書いてある) の "Get Started" を押す
+1. いちばん左のアプリケーション (Hello! Composerと書いてある) の `Get Started` もしくは `Connect now` を押す
 1. "Basic Sample Business Network" のダッシュボードが表示される
 
 ## 2.2 ダッシュボードとBusiness Networkの構成要素
@@ -269,7 +269,7 @@ await assetRegistry.update(tx.asset);
 
 1. `SampleParticipant` に年齢を表す `Integer` 型のフィールド `age` を追加せよ。 ([回答例](docs/answers/2.6.1.1.md))
 1. `sampleTransaction` メソッドにおいて、引数の `value` 値 (文字列) の先頭に `"$"` を付加したものを新しい `value` 値とするようにメソッドを書き換えよ。つまり引数が `"100"` であれば、Assetの新しい `value` 値が `"$100"` となるようにする。 ([回答例](docs/answers/2.6.1.2.md))
-1. SampleAssetのownerを変更する `transfer` メソッド (引数の型を `org.example.basic.Transfer` とする) を定義せよ。 ([回答例](docs/answers/2.6.1.3.md))
+1. `SampleAsset` のownerを変更する `transfer` メソッド (引数の型を `org.example.basic.Transfer` とする) を定義せよ。 ([回答例](docs/answers/2.6.1.3.md))
 1. `transfer` メソッドで、受け取る `owner` が18歳未満ならばTXの実行を失敗させよ。【ヒント】TXの実行を失敗させるには関数の中で `throw new Error(文字列)` とすればよい。 ([回答例](docs/answers/2.6.1.4.md))
 
 > 注意: エンティティ作成時にエラーになる場合: 変更をデプロイするとTestタブ内で見える各種レジストリは空になったように見えるが、実際には古いエンティティが残っている場合があるので、エンティティを作る際にIDの重複を避けるようにするとよい。
