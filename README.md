@@ -4,6 +4,12 @@
 
 2018年8月28・29日開催のイベント、[**Research Experience Day**](https://ibm-research-experience.connpass.com/) のDay2 午後のセッション [体験しよう！ブロックチェーン -その仕組みから実践まで-](https://ibm-research-experience.connpass.com/event/95083) のハンズオン資料である。
 
+ドキュメントをブラウザで見る場合は https://github.com/shinsa82/red-handson または ... を参照のこと。サンプルコードを含むソースをすべてダウンロードしたい場合は https://github.com/shinsa82/red-handson.git を `git clone` すること。
+
+```bash
+git clone https://github.com/shinsa82/red-handson.git
+```
+
 ## ハンズオンの進め方
 
 説明する内容はすべてここに書いてあるので、先に進みたい方は本資料をもとに進めてもらって構わない。また、機材のトラブルなどで遅れても、この資料をもとに追体験できるのでご心配なきよう。
@@ -175,7 +181,7 @@ transaction SampleTransaction {
 
 ### 2.4.4 Event 【省略】
 
-FabricにおけるTXの実行 (とブロックチェーンへの書き込み) は非同期である。クライアントに書き込みの完了などを通知するために、FabricおよびComposerにはイベントの仕組みがあるが、時間の都合上省略する。詳しくは ... を参照されたい。
+FabricにおけるTXの実行 (とブロックチェーンへの書き込み) は非同期である。クライアントに書き込みの完了などを通知するために、FabricおよびComposerにはイベントの仕組みがあるが、時間の都合上省略する。
 
 ## 2.5 アプリケーションの中身を理解してみる (Script File)
 
@@ -273,7 +279,8 @@ await assetRegistry.update(tx.asset);
 
 ## 2.7 (要ローカル環境) スクリプトによる単体テストの実行
 
-to be written
+より詳細なテストのためには、ComposerのツールキットをPCにダウンロードして行う。
+Composerのツールキットのインストールは以下のページを参考に行う。 https://hyperledger.github.io/composer/latest/installing/development-tools.html
 
 ## 2.8 
 
