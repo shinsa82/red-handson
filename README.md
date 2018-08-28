@@ -268,7 +268,7 @@ await assetRegistry.update(tx.asset);
 
 1. SampleParticipantに年齢を表す `Integer` 型のフィールド `age` を追加せよ。 ([回答例](docs/answers/2.6.1.1.md))
 1. SampleAssetのownerを変更する `transfer` メソッド (引数の型を `org.example.basic.Transfer` とする) を定義せよ。 ([回答例](docs/answers/2.6.1.2.md))
-1. `transfer` メソッドで、受け取る `owner` が18歳未満ならばTXの実行を失敗させよ。【ヒント】TXの実行を失敗させるには関数の中で `throw new Error(文字列)` とすればよい。 ([回答例](answers/docs/2.6.1.3.md))
+1. `transfer` メソッドで、受け取る `owner` が18歳未満ならばTXの実行を失敗させよ。【ヒント】TXの実行を失敗させるには関数の中で `throw new Error(文字列)` とすればよい。 ([回答例](docs/answers/2.6.1.3.md))
 
 書き換えたら `Deploy Changes` で変更を反映させ、対話的テストで確認すること。
 
