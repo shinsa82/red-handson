@@ -300,7 +300,7 @@ Composerのツールキットのインストールは以下のページを参考
 サンプルをクローンする
 
 ```bash
-git clone https://github.com/hyperledger/composer-sample-networks.git
+git clone https://github.com/hyperledger/composer-sample-networks.git
 ```
 
 ディレクトリ移動
@@ -312,10 +312,10 @@ cd composer-sample-networks/packages/basic-sample-network/
 依存関係インストール。注意: Python 2.xおよびNode 8.xが必要。バージョンに注意すること。
 
 ```
-npm install
+npm install
 ```
 
-テスト実行
+テスト実行 (`test/sample.js` にあるファイルを実行している)
 
 ```
 npm test
