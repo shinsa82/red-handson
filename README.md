@@ -56,7 +56,7 @@ git clone https://github.com/shinsa82/red-handson.git
 - 2.6 コードを書き換えてみる
 - 2.7 (要ローカル環境) スクリプトによる単体テストの実行
 
-## 2.1 Playgroundでサンプルをもとに新規Business Netoworkを作成してみる
+## 2.1 Playgroundでサンプルをもとに新規Business Networkを作成してみる
 
 必要なもの: モダンブラウザ
 
@@ -148,10 +148,10 @@ namespace org.example.basic
 Participantはユーザを表す。これはHyperledger Fabricのユーザと対応しており、この情報をもとに、アクセスが制御される。
 
 ```
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> SampleParticipant owner
-  o String value
+participant SampleParticipant identified by participantId {
+  o String participantId
+  o String firstName
+  o String lastName
 }
 ```
 
@@ -164,10 +164,10 @@ asset SampleAsset identified by assetId {
 Assetはこのアプリケーションによって操作されるエンティティを表す。
 
 ```
-participant SampleParticipant identified by participantId {
-  o String participantId
-  o String firstName
-  o String lastName
+asset SampleAsset identified by assetId {
+  o String assetId
+  --> SampleParticipant owner
+  o String value
 }
 ```
 
