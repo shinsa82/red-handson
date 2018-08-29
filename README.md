@@ -295,4 +295,28 @@ await assetRegistry.update(tx.asset);
 Composerのツールキットのインストールは以下のページを参考に行う。 https://hyperledger.github.io/composer/latest/installing/development-tools.html
 
 インストールが完了したらテストスクリプトの作成および実行を行う。テストはアプリケーション (BNA) を **実際にデプロイすることなく行うことができる。**
-時間の都合上省略するので、詳しくは https://hyperledger.github.io/composer/latest/business-network/testing を参考にしてほしい。
+時間の都合上省略するので、詳しくは https://hyperledger.github.io/composer/latest/business-network/testing を参考にするか、以下の方法で、お持ちのPCで試してみてほしい。
+
+サンプルをクローンする
+
+```bash
+git clone https://github.com/hyperledger/composer-sample-networks.git
+```
+
+ディレクトリ移動
+
+```
+cd composer-sample-networks/packages/basic-sample-network/
+```
+
+依存関係インストール。注意: Python 2.xおよびNode 8.xが必要。バージョンに注意すること。
+
+```
+npm install
+```
+
+テスト実行
+
+```
+npm test
+```
