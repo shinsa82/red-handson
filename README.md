@@ -318,7 +318,7 @@ npm install
 テスト実行 (`npm test` で `package.json` の `scripts` の下の `test` の下のコマンドが実行される。
 ここでは `npm run test-inner` が実行されていて、これは前記 `scripts` の下の `test-inner` を実行する。
 (詳しくは `npm` のドキュメントを参照のこと)
-`test-inner` ターゲットはテストフレームワーク `mocha` を起動する。
+`test-inner` ターゲットはテストフレームワーク `mocha` を起動する。
 `mocha` はデフォルトで `test` ディレクトリ以下の `.js` ファイルを実行するため、結果として、上記コマンドは `test/sample.js` にあるテストスクリプトを実行することになる)
 
 ```
