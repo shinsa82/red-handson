@@ -285,6 +285,7 @@ await assetRegistry.update(tx.asset);
 1. `sampleTransaction` メソッドにおいて、引数の `value` 値 (文字列) の先頭に `"$"` を付加したものを新しい `value` 値とするようにメソッドを書き換えよ。つまり引数が `"100"` であれば、Assetの新しい `value` 値が `"$100"` となるようにする。 ([回答例](docs/answers/2.6.1.2.md))
 1. `SampleAsset` のownerを変更する `transfer` メソッド (引数の型を `org.example.basic.Transfer` とする) を定義せよ。 ([回答例](docs/answers/2.6.1.3.md))
 1. `transfer` メソッドで、受け取る `owner` が18歳未満ならばTXの実行を失敗させよ。【ヒント】TXの実行を失敗させるには関数の中で `throw new Error(文字列)` とすればよい。 ([回答例](docs/answers/2.6.1.4.md))
+1. 【発展】本日説明していないがAccess Controlファイルを編集して、そもそも、70歳以上の `owner` は `TransferTransaction` を起動できないようにせよ。【ヒント】ACLについて参考: https://hyperledger.github.io/composer/latest/tutorials/acl-trading
 
 > 注意: エンティティ作成時にエラーになる場合: 変更をデプロイするとTestタブ内で見える各種レジストリは空になったように見えるが、実際には古いエンティティが残っている場合があるので、エンティティを作る際にIDの重複を避けるようにするとよい。
 
