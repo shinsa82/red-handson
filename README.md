@@ -156,8 +156,7 @@ participant SampleParticipant identified by participantId {
 ```
 
 - `identified by` の後では、各エンティティを一意に特定するための「主キー」にあたるフィールドを指定している
-- `o String value` はフィールドの名称とその型を定義している
-- `--> SampleParticipant owner` は他のエンティティへの参照を意味している。2.3で説明したように、この場合のフィールド値は `"resource:org.example.basic.SampleParticipant#0001"` のような形式をとる。
+- `o String participantId` はフィールドの名称とその型を定義している
 
 ### 2.4.2 Asset
 
@@ -172,6 +171,7 @@ asset SampleAsset identified by assetId {
 ```
 
 - おおむねParticipantの場合と同様である
+- `--> SampleParticipant owner` は他のエンティティへの参照を意味している。2.3で説明したように、この場合のフィールド値は `"resource:org.example.basic.SampleParticipant#0001"` のような形式をとる。
 
 ### 2.4.3 Transaction
 
